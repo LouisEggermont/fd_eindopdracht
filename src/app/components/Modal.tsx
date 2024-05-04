@@ -10,14 +10,12 @@ export default function Modal({ onClose = () => {}, children }: { onClose?: () =
         static
         open={true}
         onClose={onClose}
-        // initialFocus={overlayRef.current}
         className="fixed inset-0 z-10 flex items-center justify-center"  
     >
         <Dialog.Overlay
-            // ref={overlayRef}
-            className="fixed inset-0 bg-gray-800/60"
+            className="fixed inset-0 bg-black/50"
         />
-        <div className="relative flex items-center justify-center w-1/2">
+        <div className="relative flex items-center justify-center w-5/6 sm:w-3/4 md:w-1/2">
             {children}
         </div>
     </Dialog>

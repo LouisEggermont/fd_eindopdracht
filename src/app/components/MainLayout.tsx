@@ -1,9 +1,8 @@
 "use client";
 import { usePathname } from 'next/navigation'
 import ArrowBack from "../components/ArrowBack";
-import AlbumTypeMenuCompoment from "@/app/components/AlbumTypeMenuCompoment";
 import Logo from './generic/Logo';
-import AlubmTypeSelectorComponent from './AlbumTypeSelectorComponent';
+import AlubmTypeSelectorComponent from './AlbumTypeSelector';
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
@@ -16,14 +15,14 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
 
     return (
         <main className="flex flex-col items-center">
-            <div className="w-5/6"> 
+            <div className=" w-5/6"> 
                 {
                     pathname.startsWith('/photos/') && pathname.split('/').length > 3 
                     || pathname.startsWith('/projects/') && pathname.split('/').length > 2 
                     ? <ArrowBack/> 
                     : (
-                        <div className='flex'>
-                            <Logo text={logoText} className={pathname !== "/" ? 'text-[7vw]' : 'text-[13vw]'} />
+                        <div className='flex flex-col sm:flex-row justify-between'>
+                            <Logo text={logoText} size={pathname !== "/" ? true : false} />
                             {pathname.startsWith('/photos') ? <AlubmTypeSelectorComponent/>: null}
                         </div>
                     )

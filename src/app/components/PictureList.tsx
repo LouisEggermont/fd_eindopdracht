@@ -5,7 +5,6 @@ import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import { CldImage } from 'next-cloudinary';
 import Modal from '@/app/components/Modal';
-import { useNavigate } from 'react-router-dom';
 
 type PictureListProps = {
   albumname: string,
@@ -31,12 +30,13 @@ const PictureList: React.FC<PictureListProps> = ({ albumname, pictures }) => {
 
   return (
     <div>
-      <h2 className='mt-12 font-bold text-6xl'>{decodeURIComponent(albumname)}</h2>
+      <h2 className='my-10 sm:my-12 md:my-20 font-bold text-6xl'>{decodeURIComponent(albumname)}</h2>
       <div className='w-full mx-auto my-10 gap-5 columns-1 sm:columns-2 md:columns-3 space-y-5'>
         {pictures.resources.map((picture: any, index: number) => (
-          <div className='' key={picture.public_id}>
+          <div className='cursor: zoom-in' key={picture.public_id}>
             <Link href={`${pathname}?image=${index}`} scroll={false}>
               <CldImage
+              className='shadow-lg'
                 src={picture.public_id}
                 width={picture.width}
                 height={picture.height}
@@ -55,15 +55,13 @@ const PictureList: React.FC<PictureListProps> = ({ albumname, pictures }) => {
 
    {imageIndexNumber && (
     <Modal onClose={() => {history.back()}}>
+      <button onClick={() => {history.back()}}>Close</button>
        <CldImage
        src={pictures.resources[imageIndexNumber - 1].public_id}
        width={pictures.resources[imageIndexNumber - 1].width}
        height={pictures.resources[imageIndexNumber - 1].height}
        aspectRatio={pictures.resources[imageIndexNumber - 1].aspect_ratio}
        alt={pictures.resources[imageIndexNumber - 1].filename}
-    //    sizes='100vw'
-    //    quality="100"
-    //    format='auto'
        />
     </Modal>
     )}
