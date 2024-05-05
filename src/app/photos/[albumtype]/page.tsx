@@ -22,6 +22,7 @@ export default async function AlbumPage({
 
 return (
          <AlbumListComponent albumtype={params.albumtype}></AlbumListComponent>
+        // <p className=' font-normal hover:font-bold transition-all duration-1000 drop-shadow-2xl'>{params.albumtype}</p>
 
 );
  };

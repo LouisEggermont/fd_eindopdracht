@@ -13,7 +13,7 @@ export default async function MdxImages({ imageFolder }: { imageFolder: string }
     const images = await getImages(imageFolder);
 
     return (
-        <div className="w-full mx-auto my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
+        <div className="w-full mx-auto my-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 ">
             {images.map((image, index) => (
                 <div key={index} className="w-full relative pb-[56.25%]">
                     <Image 

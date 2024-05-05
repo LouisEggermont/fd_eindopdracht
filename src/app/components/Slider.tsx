@@ -4,9 +4,11 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 
+
 const Slider = ({ textContent }: { textContent: string }) => {
     const firstText = useRef(null);
     const secondText = useRef(null);
+    const textClass = "leading-none sm:text-[6rem] text-[2.5rem] font-thin whitespace-nowrap leading-none";
     let xPercent = 0;
     let direction = -1;
   
@@ -35,10 +37,10 @@ const Slider = ({ textContent }: { textContent: string }) => {
 
     return (
         <div className="w-full relative overflow-hidden h-[10vh] sm:h-[20vh] flex">
-            <p ref={firstText} className=" leading-none sm:text-[6rem] text-[2.5rem] font-thin whitespace-nowrap">
+            <p ref={firstText} className={textClass}>
                 {textContent}&nbsp; 
             </p>
-            <p ref={secondText} className=" leading-none sm:text-[6rem] text-[2.5rem] font-thin whitespace-nowrap"> 
+            <p ref={secondText} className={textClass}> 
                 {textContent}&nbsp;
             </p>
         </div>

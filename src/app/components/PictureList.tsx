@@ -20,13 +20,10 @@ type PictureListProps = {
 }
 
 const PictureList: React.FC<PictureListProps> = ({ albumname, pictures }) => {
-        const router = useRouter();
         const pathname = usePathname();
         const searchParams = useSearchParams()
-        // const navigate = useNavigate();
         const imageIndex = (searchParams.get('image'));
         const imageIndexNumber = imageIndex ? parseInt(imageIndex) + 1 : null;
-        console.log(pictures.resources[0]);
 
   return (
     <div>
@@ -36,7 +33,7 @@ const PictureList: React.FC<PictureListProps> = ({ albumname, pictures }) => {
           <div className='cursor: zoom-in' key={picture.public_id}>
             <Link href={`${pathname}?image=${index}`} scroll={false}>
               <CldImage
-              className='shadow-lg'
+              className='shadow-lg hover:scale-102 transition-all ease-in-out duration-200'
                 src={picture.public_id}
                 width={picture.width}
                 height={picture.height}

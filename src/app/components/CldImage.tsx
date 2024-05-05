@@ -24,7 +24,7 @@ const CldImageComponent: React.FC<CldImageComponentProps> = ({
 }) => {
   return (
    <CldImage
-   className='shadow-lg'
+   className='shadow-lg hover:scale-102 transition-all ease-in-out duration-200'
       aspectRatio={aspectRatio}
       width={parseInt(width)}
       height={parseInt(height)}

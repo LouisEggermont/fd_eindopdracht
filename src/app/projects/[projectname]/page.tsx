@@ -1,6 +1,6 @@
 
 import dynamic from 'next/dynamic';
-import MdxLayout from '@/app/components/MdxLayout';
+import MdxLayout from '@/app/components/Mdx/MdxLayout';
 import fs from 'fs';
 import path from 'path';
 

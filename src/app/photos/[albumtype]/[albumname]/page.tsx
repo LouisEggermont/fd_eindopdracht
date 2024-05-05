@@ -27,11 +27,19 @@ export default async function AlbumPage({
 }: {
   params: { albumtype: string; albumname: string };
 }) {
-  const pictures = await getPicturesForAlbum(params.albumtype + "/" + decodeURIComponent(params.albumname));
+  try {
+    const pictures = await getPicturesForAlbum(params.albumtype + "/" + decodeURIComponent(params.albumname));
 
-
-  return (
-
-<PictureList albumname={decodeURIComponent(params.albumname)} pictures={pictures} />
-  );
+    return (
+      <PictureList albumname={decodeURIComponent(params.albumname)} pictures={pictures} />
+    );
+  } catch (error: any) {
+    return (
+      <div className='w-full h-[80vh] flex justify-center items-center font-bold'>
+        <p>Error while fetching pictures: {error.error ? error.error.message : error}</p>
+      </div>
+    );
+  }
 };
+
+

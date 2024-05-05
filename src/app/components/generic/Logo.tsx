@@ -1,18 +1,16 @@
-import Link from "next/link";
-
-const Logo = ({ size, text }: { size: boolean, text: string }) => {
-  if (size) {
+const Logo = ({ size, text, onClick }: { size: boolean, text: string, onClick?: () => void }) => {
+  if (size) { 
     return (
       <div className={`font-helvetica font-bold sm:text-[7vw] text-[12.65vw] leading-none pt-20 transition-all duration-500 ease-in-out`}>
-        <Link href={"/"}>LOUIS</Link>{text ? <span className="font-normal text-[8vw] sm:text-[4vw]">&gt;{text}</span> : null}
-        <br /><Link className="break-words" href={"/"}>EGGERMONT</Link>
+        <button onClick={onClick}>LOUIS</button>{text ? <span className="transition-opacity font-normal text-[8vw] sm:text-[4vw]">&gt;{text}</span> : null}
+        <br /><button onClick={onClick} className="break-words">EGGERMONT</button>
       </div>
     );
   } else {
     return (
       <div className={`font-helvetica font-bold text-[12.65vw] leading-none pt-20 transition-all duration-500 ease-in-out`}>
-        <Link href={"/"}>LOUIS</Link>{text ? <span className="font-normal text-[8vw] sm:text-[4vw]">&gt;{text}</span> : null}
-        <br /><Link href={"/"}>EGGERMONT</Link>
+        <button onClick={onClick}>LOUIS</button>{text ? <span className="transition-opacity font-normal text-[8vw] sm:text-[4vw]">&gt;{text}</span> : null}
+        <br /><button onClick={onClick}>EGGERMONT</button>
       </div>
     );
   }

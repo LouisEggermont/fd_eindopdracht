@@ -1,0 +1,12 @@
+.prose *{
+    color: #121212 !important;
+}
+.prose p {
+    color: #4a4a4a !important;
+}
+.prose p:last-of-type {
+    margin-bottom: 0 !important;
+}
+.prose p:first-of-type {
+    margin-top: 0 !important;
+}

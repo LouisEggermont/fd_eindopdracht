@@ -2,7 +2,7 @@
 import { redirect } from 'next/navigation';
 
 const AlbumsPage = () => {
-    redirect(`/photos/digi`);
+    redirect(`/photos/analog`);
 };
 
 export default AlbumsPage;
