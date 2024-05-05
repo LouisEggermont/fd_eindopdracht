@@ -37,7 +37,7 @@ export default async function Page() {
               />
               </div>
               <p className='sm:text-2xl text-xl mt-2'>{project.name}  </p>
-          </Link>
+          </Link> 
         </div>
       ))}
     </div>

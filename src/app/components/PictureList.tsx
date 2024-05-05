@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useSearchParams } from 'next/navigation';
-import { useRouter } from 'next/navigation';
 import { CldImage } from 'next-cloudinary';
 import Modal from '@/app/components/Modal';
 
@@ -52,7 +51,7 @@ const PictureList: React.FC<PictureListProps> = ({ albumname, pictures }) => {
 
    {imageIndexNumber && (
     <Modal onClose={() => {history.back()}}>
-      <button onClick={() => {history.back()}}>Close</button>
+      <button className=' opacity-0' onClick={() => {history.back()}}>Close</button>
        <CldImage
        src={pictures.resources[imageIndexNumber - 1].public_id}
        width={pictures.resources[imageIndexNumber - 1].width}
