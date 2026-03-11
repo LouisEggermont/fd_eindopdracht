@@ -5,7 +5,7 @@ import MainLayout from "./components/MainLayout";
 
 const inter = Inter({ subsets: ["latin"] });
 
-import localFont from '@next/font/local'
+import localFont from "next/font/local"
 
 const helvetica = localFont({
   src: [
