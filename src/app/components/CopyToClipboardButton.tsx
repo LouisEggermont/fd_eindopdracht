@@ -24,13 +24,13 @@ const CopyToClipboardButton = ({ text }: CopyToClipboardButtonProps) => {
     <div>
       <button onClick={handleCopyClick}>
         <Tooltip content={isCopied ? 'Copied!' : 'Copy to Clipboard'}>
-          <div className='relative w-[1.5rem] h-[1.5rem] sm:w-[4rem] sm:h-[2rem] object-contain'>
+          <div className='relative w-[1.5rem] h-[1.5rem] sm:w-[4rem] sm:h-[2rem]'>
             <Image
               src="/logos/email.png"
               alt="email icon"
               fill
               sizes='10vw'
-              className="hover:scale-110 transition-all duration-200"
+              className="hover:scale-110 transition-all duration-200 object-contain"
             />
           </div>
         </Tooltip>
